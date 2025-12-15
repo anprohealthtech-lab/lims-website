@@ -51,7 +51,7 @@ export default function Dashboard() {
           }`}>
           <img
             src="https://ik.imagekit.io/18tsendxqy/website/dashboard%20view.jpeg?tr=f-auto"
-            alt="Anpro LIMS Dashboard - Real-time lab management interface showing sample tracking, analytics, and critical alerts"
+            alt="AnPro LIMS Dashboard - Real-time lab management interface showing sample tracking, analytics, and critical alerts"
             loading="lazy"
             decoding="async"
             className="w-full h-auto group-hover:scale-105 transition-transform duration-700"

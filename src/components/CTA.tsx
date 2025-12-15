@@ -20,7 +20,7 @@ export default function CTA({ onOpenContact }: CTAProps) {
         </h2>
 
         <p className="text-xl sm:text-2xl text-blue-100 mb-4">
-          Anpro LIMS v2 isn't just software.
+          AnPro LIMS v2 isn't just software.
         </p>
 
         <p className="text-2xl sm:text-3xl font-semibold text-white mb-12">

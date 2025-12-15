@@ -54,13 +54,12 @@ export default function Hero({ onOpenContact }: HeroProps) {
 
       <nav className="relative z-20 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-6 animate-fadeInUp">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-lg flex items-center justify-center border border-white/20">
-              <Brain className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold text-white drop-shadow-md">
-              Anpro Solutions
-            </span>
+          <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg">
+            <img
+              src="https://ik.imagekit.io/18tsendxqy/website/Screenshot%202025-12-15%20133819.png"
+              alt="AnPro Solutions"
+              className="h-10 w-auto rounded-lg"
+            />
           </div>
 
           <div className="hidden md:flex items-center space-x-6 p-2 bg-black/20 backdrop-blur-sm rounded-2xl border border-white/10">

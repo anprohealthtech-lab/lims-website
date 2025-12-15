@@ -11,7 +11,7 @@ export default function Footer() {
                 <Brain className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold text-white">
-                Anpro Solutions
+                AnPro Solutions
               </span>
             </div>
             <p className="text-gray-400 leading-relaxed">
@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Anpro Solutions. All Rights Reserved.</p>
+          <p>&copy; {new Date().getFullYear()} AnPro Solutions. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
