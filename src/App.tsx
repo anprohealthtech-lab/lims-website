@@ -1,33 +1,29 @@
-import { useState } from 'react';
-import Hero from './components/Hero';
-import Dashboard from './components/Dashboard';
-import Features from './components/Features';
-import CoreModules from './components/CoreModules';
-import About from './components/About';
-import Pricing from './components/Pricing';
-import CTA from './components/CTA';
-import Footer from './components/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp';
-import ContactModal from './components/ContactModal';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+import HomePage from './pages/HomePage';
+import ContactPage from './pages/ContactPage';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
-  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-
-  const openModal = () => setIsContactModalOpen(true);
-
   return (
-    <div className="min-h-screen bg-white">
-      <Hero onOpenContact={openModal} />
-      <Dashboard />
-      <Features />
-      <CoreModules onOpenContact={openModal} />
-      <About />
-      <Pricing onOpenContact={openModal} />
-      <CTA onOpenContact={openModal} />
-      <Footer />
-      <FloatingWhatsApp />
-      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
-    </div>
+    <Router>
+      <ScrollToTop />
+      <div className="min-h-screen bg-white">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
