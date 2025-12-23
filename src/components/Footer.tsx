@@ -1,4 +1,5 @@
 import { Brain, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -36,6 +37,11 @@ export default function Footer() {
                 <a href="#about" className="hover:text-blue-400 transition-colors">
                   About Us
                 </a>
+              </li>
+              <li>
+                <Link to="/privacy-policy" className="hover:text-blue-400 transition-colors">
+                  Privacy Policy
+                </Link>
               </li>
             </ul>
           </div>
