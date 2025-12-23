@@ -29,7 +29,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
         setError('');
 
         try {
-            const response = await fetch('/send_mail.php', {
+            const response = await fetch('/.netlify/functions/send-mail', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                 <input
                     type="text"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
                     placeholder="Dr. Rajesh Kumar"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -112,7 +112,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                 <input
                     type="tel"
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
                     placeholder="+91 98765 43210"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -123,13 +123,13 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                 <label className="block text-sm font-medium text-gray-700 mb-1">Lab Status</label>
                 <select
                     required
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white"
                     value={formData.labStatus}
                     onChange={(e) => setFormData({ ...formData, labStatus: e.target.value })}
                 >
-                    <option value="">Select Status</option>
-                    <option value="New Lab">Planning a New Lab</option>
-                    <option value="Existing Lab">Existing Lab</option>
+                    <option value="" className="text-gray-500">Select Status</option>
+                    <option value="New Lab" className="text-gray-900">Planning a New Lab</option>
+                    <option value="Existing Lab" className="text-gray-900">Existing Lab</option>
                 </select>
             </div>
 
@@ -138,14 +138,14 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                     <label className="block text-sm font-medium text-gray-700 mb-1">When are you planning to launch?</label>
                     <select
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white"
                         value={formData.launchTimeline}
                         onChange={(e) => setFormData({ ...formData, launchTimeline: e.target.value })}
                     >
-                        <option value="">Select Timeline</option>
-                        <option value="Within 1 month">Within 1 month</option>
-                        <option value="3-6 months">3-6 months</option>
-                        <option value="More than 6 months">More than 6 months</option>
+                        <option value="" className="text-gray-500">Select Timeline</option>
+                        <option value="Within 1 month" className="text-gray-900">Within 1 month</option>
+                        <option value="3-6 months" className="text-gray-900">3-6 months</option>
+                        <option value="More than 6 months" className="text-gray-900">More than 6 months</option>
                     </select>
                 </div>
             )}
@@ -157,7 +157,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                         <input
                             type="text"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
                             placeholder="City Pathology Lab"
                             value={formData.labName}
                             onChange={(e) => setFormData({ ...formData, labName: e.target.value })}
@@ -168,7 +168,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                         <input
                             type="text"
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
                             placeholder="Mumbai, Delhi, etc."
                             value={formData.city}
                             onChange={(e) => setFormData({ ...formData, city: e.target.value })}
@@ -178,14 +178,14 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                         <label className="block text-sm font-medium text-gray-700 mb-1">Daily Sample Load</label>
                         <select
                             required
-                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all text-gray-900 bg-white"
                             value={formData.sampleLoad}
                             onChange={(e) => setFormData({ ...formData, sampleLoad: e.target.value })}
                         >
-                            <option value="">Select Load</option>
-                            <option value="Less than 25">Less than 25 samples/day</option>
-                            <option value="25-50">25-50 samples/day</option>
-                            <option value="More than 50">More than 50 samples/day</option>
+                            <option value="" className="text-gray-500">Select Load</option>
+                            <option value="Less than 25" className="text-gray-900">Less than 25 samples/day</option>
+                            <option value="25-50" className="text-gray-900">25-50 samples/day</option>
+                            <option value="More than 50" className="text-gray-900">More than 50 samples/day</option>
                         </select>
                     </div>
                 </>
@@ -195,7 +195,7 @@ export default function LeadForm({ source = 'Website', onSuccess, className = ''
                 <label className="block text-sm font-medium text-gray-700 mb-1">Email (Optional)</label>
                 <input
                     type="email"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white text-gray-900 placeholder-gray-400"
                     placeholder="lab@example.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}

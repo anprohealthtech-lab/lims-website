@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Dashboard from '../components/Dashboard';
 import Features from '../components/Features';
@@ -8,25 +8,25 @@ import Pricing from '../components/Pricing';
 import CTA from '../components/CTA';
 import Footer from '../components/Footer';
 import FloatingWhatsApp from '../components/FloatingWhatsApp';
-import ContactModal from '../components/ContactModal';
 
 export default function HomePage() {
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const navigate = useNavigate();
 
-    const openModal = () => setIsContactModalOpen(true);
+    const handleContactClick = () => {
+        navigate('/contact');
+    };
 
     return (
         <>
-            <Hero onOpenContact={openModal} />
+            <Hero onOpenContact={handleContactClick} />
             <Dashboard />
             <Features />
-            <CoreModules onOpenContact={openModal} />
+            <CoreModules onOpenContact={handleContactClick} />
             <About />
-            <Pricing onOpenContact={openModal} />
-            <CTA onOpenContact={openModal} />
+            <Pricing onOpenContact={handleContactClick} />
+            <CTA onOpenContact={handleContactClick} />
             <Footer />
             <FloatingWhatsApp />
-            <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
         </>
     );
 }

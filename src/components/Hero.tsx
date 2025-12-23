@@ -56,7 +56,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg">
             <img
-              src="https://ik.imagekit.io/18tsendxqy/website/Screenshot%202025-12-15%20133819.png"
+              src="https://ik.imagekit.io/18tsendxqy/website/Screenshot%202025-12-15%20133819.png?tr=h-80"
               alt="AnPro Solutions"
               className="h-10 w-auto rounded-lg"
             />
@@ -80,7 +80,7 @@ export default function Hero({ onOpenContact }: HeroProps) {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-end pb-8">
         <div className="text-center max-w-4xl mx-auto">
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp opacity-0 drop-shadow-lg" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fadeInUp drop-shadow-lg">
             <span className="block mb-2">The AI Brain for</span>
             <span className="bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient drop-shadow-sm brightness-125">
               Modern Pathology Labs

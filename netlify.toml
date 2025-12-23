@@ -2,7 +2,24 @@
   command = "npm run build"
   publish = "dist"
 
+[functions]
+  directory = "netlify/functions"
+
+# Redirect PHP endpoint to Netlify Function
+[[redirects]]
+  from = "/send_mail.php"
+  to = "/.netlify/functions/send-mail"
+  status = 200
+
+# SPA fallback - must be last
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[[plugins]]
+  package = "netlify-plugin-checklinks"
